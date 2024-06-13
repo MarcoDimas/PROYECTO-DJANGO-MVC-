@@ -58,32 +58,48 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
+          <div class="user-menu dropdown">
+			<a href="#">
+			  <img src="{%block imagen%}{%endblock%}">
+			  <div> {%block texto%}{%endblock%} </div>
+			</a>
+		  </div>
+
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
                            <li> <a href="{% url 'principal' %}">Inicio</a> <li>
                            <li> <a href="{% url 'Contacto' %}">Contacto</a> </li>
                            <li> <a href="{% url 'Formulario' %}">Formulario</a> </li>
-						   <li> <a href="{% url 'Ejemplo' %}">Ejemplo</a> </li>
-						
+						   {% comment %} <li> <a href="{% url 'Ejemplo' %}">Ejemplo</a> </li> {% endcomment %}
 				</ul>
 			</div>
 		</div>
-		<!-- /sidebar -->
-
-
-		<!-- Contenido Principal-->
-	 
-		<!-- /Contenido Principal-->
 	</div>
     
+
+<div class="page-content">
+
+	{% block contenido%}
+	{%endblock%}
+     {% block ubicacion%}
+      {%endblock%}
+	  <div class="breadcrumb-line">
+		<ul class="breadcrumb">
+
+			<a href="{%url 'principal'%}">
+				{%if request.path == '/' %}
+				       principal
+				{%else%}
+				      Principal{{request.path}}
+				{%endif%}
+			</a>
+			
+		</ul>
+	   </div>
     
-{% block contenido%}
-
-
-
-
-{%endblock%}
-
+	  {% block formulario%}
+      {%endblock%}
+	</div>
 </body>
 </html>

@@ -1,10 +1,22 @@
 {% extends "inicio/encabezado.html" %}
 {% block titulo %} PRINCIPAL {%endblock%}
 
+{% block imagen%}
+  {%load static %}
+  {%static 'inicio/imagenes/home.png'%}
+{%endblock%}
+
+{% block texto%}
+  {%load static %}
+  
+  <div class="user-info">
+    PRINCIPAL <span>DSM</span>
+  </div>
+{%endblock%}
+
 
 {% block contenido%}
 
-<div class="page-content">
 
 
     <!--Encabezdo -->
@@ -17,10 +29,8 @@
         
     </div>
     <!-- /Encabezado-->
-
-
-</div>
-
-
-
 {%endblock%}
+
+{% block ubicacion%}
+
+{%endblock%}s
