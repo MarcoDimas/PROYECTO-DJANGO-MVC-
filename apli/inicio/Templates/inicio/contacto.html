@@ -1,0 +1,80 @@
+{% extends "inicio/encabezado.html" %}
+{% block titulo%} CONTACTO {%endblock%}
+
+
+
+{% block imagen%}
+  {%load static %}
+  {%static 'inicio/imagenes/rich.jpg'%}
+  
+{%endblock%}
+
+
+
+{% block texto%}
+  {%load static %}
+  
+  <div class="user-info">
+    CONTACTO <span>DSM</span>
+  </div>
+{%endblock%}
+
+
+
+
+
+
+{% block contenido%}
+
+    <!--Encabezdo -->
+    <div class="page-header">
+        <div class="page-title">
+            <h3>Registro
+            <small>Ingresa tu información</small></h3>
+        </div>
+
+    
+    </div>
+{%endblock%}
+
+{% block ubicacion%}
+
+{%endblock%}
+
+{% block formulario%}
+    <!-- /Encabezado-->
+
+    <!-- Formulario -->
+    <form class="form-horizontal" action="#" role="form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control">
+                    </div>   
+                    
+                </div>    
+                    <div class="form-group">
+                    <label class="col-sm-1 control-label text-right">Mensaje:</label>
+                    <div>
+                        <label class="col-sm-1 control-label text-right"><textarea cols="50" rows="10"></textarea></label>
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <div>
+                        <label class="col-sm-1 control-label text-right"><input type="Button" name="enviar" value="Enviar"/></label>
+                    </div>
+                    
+                </div>
+            
+
+            </div>
+        </div>
+    </form>
+<!-- Fin del Formulario -->
+
+
+
+{%endblock%}
