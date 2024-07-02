@@ -1,0 +1,56 @@
+{% extends "inicio/encabezado.html" %}
+{% block titulo %} PRINCIPAL {% endblock %}
+
+{% block imagen %}
+  {% load static %}
+  <img src="{% static 'inicio/imagenes/home.png' %}" alt="Home">
+{% endblock %}
+
+{% block texto %}
+  {% load static %}
+  
+  <div class="user-info">
+    PRINCIPAL <span>DSM</span>
+  </div>
+{% endblock %}
+
+{% block contenido %}
+  <!--Encabezdo -->
+  <div class="page-header">
+    <div class="page-title">
+      <h3>Alumnos
+        <small>Lista de Alumnos</small>
+      </h3>
+    </div>  
+  </div>
+{% endblock %}
+
+{% block ubicacion %}
+{% endblock %}
+
+{% block formulario %}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Matricula</th>
+      <th>Nombre</th>
+      <th>Carrera</th>
+      <th>Turno</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for alumno in 9B %}
+    <tr>
+      <td class="text-center">
+        <img src="{{ alumno.imagen.url }}" alt="Foto" class="img-media">
+      </td>
+      <td class="text-semibold">{{ alumno.matricula }}</td>
+      <td class="metud">{{ alumno.nombre }}</td>
+      <td class="medtud">{{ alumno.carrera }}</td>
+      <td class="medtud">{{ alumno.turno }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

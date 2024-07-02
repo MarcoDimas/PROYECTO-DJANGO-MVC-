@@ -24,13 +24,41 @@
         <div class="page-title">
             <h3>Alumnos
             <small>Lista de Alumnos </small></h3>
-        </div>
-
-        
+        </div>  
     </div>
-    <!-- /Encabezado-->
+
+
 {%endblock%}
 
 {% block ubicacion%}
 
-{%endblock%}s
+{%endblock%}
+
+{% block formulario%}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Matricula</th>
+      <th>Nombre</th>
+      <th>Carrera</th>
+      <th>Turno</th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr>
+    <th class="text-center">
+      <img src= "" alt="" class="img-media">
+    </th>
+    <th class="text-semibold">UTM210018TI</th>
+    <th class="metud">Dimas</th>
+    <th class="medtud">Tic</th>
+    <th class="medtud">Matutino</th>
+  </tr>
+</tbody>
+</table>
+
+{%endblock%}
+
+
