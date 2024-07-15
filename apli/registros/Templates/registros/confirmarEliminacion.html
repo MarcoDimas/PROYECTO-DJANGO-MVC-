@@ -1,0 +1,46 @@
+{% extends "inicio/encabezado.html" %}
+{% block titulo %} ELIMINAR {% endblock %}
+
+{% block imagen %}
+  {% load static %}
+  <img src="{% static 'inicio/imagenes/home.png' %}" alt="Home">
+{% endblock %}
+
+{% block texto %}
+  {% load static %}
+  
+  <div class="user-info">
+    PRINCIPAL <span>DSM</span>
+  </div>
+{% endblock %}
+
+{% block contenido %}
+  <!--Encabezdo -->
+  <div class="page-header">
+    <div class="page-title">
+      <h3>ELIMINAR COMENTARIO
+        {% comment %} <small>Lista de Alumnos</small> {% endcomment %}
+      </h3>
+    </div>  
+  </div>
+{% endblock %}
+
+{% block ubicacion %}
+{% endblock %}
+
+{% block formulario %}
+<form method="POST">
+ {% csrf_token %}
+<div class="callout callout-danger fade in">
+    <h5>Eliminando comentario</h5>
+    <p>¿Estas seguro que deseas <strong>Eliminar</straong> el comentario seleccionado.</p>
+
+</div>
+
+<button type="submit" class="btn btn-danger">SI</button>
+<a href="{%url 'Comentario'%}" class="btn btn-primary">Cancela</a>
+</form>
+
+
+
+{% endblock %}

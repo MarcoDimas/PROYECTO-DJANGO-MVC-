@@ -1,0 +1,69 @@
+{% extends "inicio/encabezado.html" %}
+{% block titulo%} COMENTARIO {%endblock%}
+
+
+
+{% block imagen%}
+  {%load static %}
+  {%static 'inicio/imagenes/rich.jpg'%}
+  
+{%endblock%}
+
+
+
+{% block texto%}
+  {%load static %}
+  
+  <div class="user-info">
+    COMENTARIO <span>DSM</span>
+  </div>
+{%endblock%}
+
+
+
+
+
+
+{% block contenido%}
+
+    <!--Encabezdo -->
+    <div class="page-header">
+        <div class="page-title">
+            <h3>Comentario
+            <small>Consulta de comentarios</small></h3>
+        </div>
+
+    
+    </div>
+{%endblock%}
+
+{% block ubicacion%}
+
+{%endblock%}
+
+{% block formulario%}
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>USUARIO</th>
+        <th>MENSAJE</th>
+        <th>EDITAR</th>
+        <th>ELIMINAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comentario in 9B %}
+      <tr>
+        <td class="text-center">{{ comentario.usuario }}</td>
+        <td class="text-semibold">{{ comentario.mensaje }}</td>
+        <td class="metud"><a href="{% url 'Editar' comentario.id %}">Editar</a></td>
+        <td class="medtud"><a href="{% url 'Eliminar' comentario.id %}">Eliminar</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+
+
+{%endblock%}
