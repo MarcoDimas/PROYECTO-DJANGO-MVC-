@@ -3,6 +3,7 @@ from .models import Alumnos
 from .forms import ComentarioContactoForms
 from .forms import ComentarioContacto
 from django.shortcuts import get_object_or_404
+import datetime
 
 def registros(requets):
     alumnos =Alumnos.objects.all()
@@ -54,3 +55,37 @@ def editarComentarioContacto(request, id):
         form = ComentarioContactoForms(instance=comentario)
     
     return render(request, "registros/editarComentario.html", {'form': form, 'comentario': comentario})
+
+
+def consulta1(requets):
+    alumnos = Alumnos.objects.filter(carrera="TI")
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+
+def consulta2(requets):
+    alumnos = Alumnos.objects.filter(carrera="TI").filter(turno="Matutino")
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+def consulta3(requets):
+    alumnos = Alumnos.objects.all().only("matricula", "nombre", "carrera", "turno", "imagen")
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+def consulta4(requets):
+    alumnos = Alumnos.objects.filter(turno__contains="Vesp")
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+def consulta5(requets):
+    alumnos = Alumnos.objects.filter(nombre__in=["Juan","Ana"])
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+
+def consulta6(requets):
+    fechaInicio = datetime.date(2024, 7, 1)
+    fechaFin = datetime.date(2024, 7, 13)
+    alumnos = Alumnos.objects.filter(created__range=(fechaInicio,fechaFin))
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+
+def consulta7(requets):
+    alumnos = Alumnos.objects.filter(comentario__coment__contains="No inscrito")
+    return render(requets, "registros/consultas.html", {'9B':alumnos})
+

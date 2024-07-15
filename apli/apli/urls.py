@@ -30,7 +30,14 @@ urlpatterns = [
     path("comentario/", views_registros.comentario, name="Comentario"),
     path("eliminarComentario/<int:id>/", views_registros.eliminarComentarioContacto, name="Eliminar"),
     path("formEditarComentario/<int:id>/", views_registros.consultarComentarioIndividual, name="ConsultaIndividual"),
-    path("editarComentario/<int:id>/", views_registros.editarComentarioContacto, name="Editar")
+    path("editarComentario/<int:id>/", views_registros.editarComentarioContacto, name="Editar"),
+    path("consultas1/", views_registros.consulta1, name="Consultas"),
+    path("consultas2/", views_registros.consulta2, name="ConsultasDos"),
+    path("consultas3/", views_registros.consulta3, name="ConsultasTres"),
+    path("consultas4/", views_registros.consulta4, name="ConsultasCuatro"),
+    path("consultas5/", views_registros.consulta5, name="ConsultasCinco"),
+    path("consultas6/", views_registros.consulta6, name="ConsultasSeis"),
+    path("consultas7/", views_registros.consulta7, name="ConsultasSeis"),
 
 
 
